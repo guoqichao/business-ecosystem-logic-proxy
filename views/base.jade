@@ -25,7 +25,8 @@ html(ng-app="app")
           PRODUCTORDER_MANAGEMENT: '#{ proxyPath }/#{ orderingPath }/api/productOrdering/v2',
           INVENTORY: '#{ proxyPath }/#{ inventoryPath }/api/productInventory/v2',
           PAYMENT: '#{ proxyPath }/#{ chargingPath }/api/orderManagement/orders/:action',
-          SHOPPING_CART: '#{ shoppingCartPath }/:action/:id'
+          SHOPPING_CART: '#{ shoppingCartPath }/:action/:id',
+          ONBOARDING_MANAGEMENT: '#{ proxyPath }/onBoardingManagement'
         });
 
     if user
@@ -141,6 +142,8 @@ html(ng-app="app")
       include ./partials/stock/product/update.jade
     script(type="text/ng-template", id="stock/product/update/bundled")
       include ./partials/stock/product/update-bundledproduct.jade
+    script(type="text/ng-template", id="stock/product/update/characteristic")
+      include ./partials/stock/product/update-form-characteristic.jade
     script(type="text/ng-template", id="stock/product/update/attachment")
       include ./partials/stock/product/update-form-attachment.jade
 
