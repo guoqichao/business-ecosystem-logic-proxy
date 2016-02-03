@@ -32,7 +32,7 @@
         vm.list = [];
         vm.list.status = LOADING;
 
-        vm.isFinalStatus = isFinalStatus;
+        vm.isTransitable = isTransitable;
         vm.getNextStatus = getNextStatus;
         vm.showFilters = showFilters;
         vm.updateStatus = updateStatus;
@@ -49,8 +49,11 @@
             $rootScope.$broadcast(EVENTS.FILTERS_OPENED, PRODUCTORDER_STATUS);
         }
 
-        function isFinalStatus(orderItem) {
-            return orderItem.state === PRODUCTORDER_STATUS.COMPLETED || orderItem.state === PRODUCTORDER_STATUS.FAILED;
+        function isTransitable(orderItem) {
+
+            return orderItem.state === PRODUCTORDER_STATUS.ACKNOWLEDGED ||
+                orderItem.state === PRODUCTORDER_STATUS.COMPLETED ||
+                orderItem.state === PRODUCTORDER_STATUS.FAILED;
         }
 
         function getNextStatus(orderItem) {
@@ -191,16 +194,19 @@
                     var ppalWindow = $window.open(orderCreated.headers['x-redirect-url'], '_blank');
 
                     // Display a message and wait until the new tab has been closed to redirect the page
-                    $rootScope.$emit(EVENTS.MESSAGE_CREATED);
-                    var interval = $interval(function() {
-                        if (ppalWindow.closed) {
-                            vm.createOrderStatus = FINISHED;
-                            $interval.cancel(interval);
-                            $rootScope.$emit(EVENTS.MESSAGE_CLOSED);
-                            cleanCartItems();
-                            $state.go('inventory');
-                        }
-                    }, 500);
+                    $rootScope.$emit(EVENTS.MESSAGE_CREATED, orderCreated.headers['x-redirect-url']);
+
+                    if (ppalWindow) {
+                        var interval = $interval(function () {
+                            if (ppalWindow.closed) {
+                                vm.createOrderStatus = FINISHED;
+                                $interval.cancel(interval);
+                                $rootScope.$emit(EVENTS.MESSAGE_CLOSED);
+                                cleanCartItems();
+                                $state.go('inventory');
+                            }
+                        }, 500);
+                    }
 
                 } else {
                     vm.createOrderStatus = FINISHED;
@@ -224,7 +230,7 @@
         initOrder();
     }
 
-    function ProductOrderDetailController($state, ProductOrder) {
+    function ProductOrderDetailController($state, Utils, ProductOrder) {
         /* jshint validthis: true */
         var vm = this;
 
