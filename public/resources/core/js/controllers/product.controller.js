@@ -108,35 +108,35 @@
         var createPromise = null;
         var stepList = [
             {
-                title: 'General',
+                title: '基本信息',
                 templateUrl: 'stock/product/create/general'
             },
             {
-                title: 'Bundle',
+                title: '产品组合',
                 templateUrl: 'stock/product/create/bundle'
             },
             {
-                title: 'Assets',
+                title: '资产配置',
                 templateUrl: 'stock/product/create/assets'
             },
             {
-                title: 'Characteristics',
+                title: '产品特征',
                 templateUrl: 'stock/product/create/characteristics'
             },
             {
-                title: 'Attachments',
+                title: '附件',
                 templateUrl: 'stock/product/create/attachments'
             },
             {
-                title: 'Relationships',
+                title: '关系',
                 templateUrl: 'stock/product/create/relationships'
             },
             {
-                title: 'Terms & Conditions',
+                title: '条款与章程',
                 templateUrl: 'stock/product/create/terms'
             },
             {
-                title: 'Finish',
+                title: '完成',
                 templateUrl: 'stock/product/create/finish'
             }
         ];

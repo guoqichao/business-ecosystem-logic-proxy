@@ -137,11 +137,11 @@
         var createPromise = null;
         var stepList = [
             {
-                title: 'General',
+                title: '基本信息',
                 templateUrl: 'stock/product-catalogue/create/general'
             },
             {
-                title: 'Finish',
+                title: '完成',
                 templateUrl: 'stock/product-catalogue/create/finish'
             }
         ];

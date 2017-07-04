@@ -12,7 +12,7 @@
             table.table.table-bordered.table-hover.table-selectable
               thead
                 tr
-                  th Name
+                  th 名称
               tbody
                 tr(ng-repeat="name in createVM.sharingModels" ng-class="{ active: createVM.data.productClass === name }" ng-click="createVM.setProductClass(name)")
                   td {{ name }}

@@ -14,7 +14,7 @@
             ng-messages="form.street.$error"
             ng-show="vm.hasFieldError(form.street)"
           )
-            span(ng-message="required") This field is required.
+            span(ng-message="required") 必填字段
     .row
       .col-sm-6
         .form-group(ng-class="{ 'has-error': vm.hasFieldError(form.postcode) }")
@@ -29,7 +29,7 @@
             ng-messages="form.postcode.$error"
             ng-show="vm.hasFieldError(form.postcode)"
           )
-            span(ng-message="required") This field is required.
+            span(ng-message="required") 必填字段
       .col-sm-6
         .form-group(ng-class="{ 'has-error': vm.hasFieldError(form.city) }")
           label City
@@ -44,8 +44,8 @@
             ng-messages="form.city.$error"
             ng-show="vm.hasFieldError(form.city)"
           )
-            span(ng-message="required") This field is required.
-            span(ng-message="maxlength") This field must not exceed 100 chars.
+            span(ng-message="required") 必填字段
+            span(ng-message="maxlength") 字段不能超过 100 个字符.
     .row
       .col-sm-6
         .form-group(ng-class="{ 'has-error': vm.hasFieldError(form.stateOrProvince) }")
@@ -61,8 +61,8 @@
             ng-messages="form.stateOrProvince.$error"
             ng-show="vm.hasFieldError(form.stateOrProvince)"
           )
-            span(ng-message="required") This field is required.
-            span(ng-message="maxlength") This field must not exceed 100 chars.
+            span(ng-message="required") 必填字段
+            span(ng-message="maxlength") 字段不能超过 100 个字符.
       .col-sm-6
         .form-group(ng-class="{ 'has-error': vm.hasFieldError(form.country) }")
           label Country
@@ -77,4 +77,4 @@
             ng-messages="form.country.$error"
             ng-show="vm.hasFieldError(form.country)"
           )
-            span(ng-message="required") This field is required.
+            span(ng-message="required") 必填字段

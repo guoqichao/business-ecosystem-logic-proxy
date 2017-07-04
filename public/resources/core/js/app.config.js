@@ -36,6 +36,16 @@
         CANCELLED: 'Cancelled'
     };
 
+    var getStatusNameCN=function (value) {
+        switch (value)
+        {
+            case "Active":
+                return "激活";
+            default:
+                return "测试";
+        }
+    }
+
     angular
         .module('app', ['ngResource', 'ngMessages', 'angularMoment', 'ui.router', 'internationalPhoneNumber'])
         .config(function(ipnConfig) {

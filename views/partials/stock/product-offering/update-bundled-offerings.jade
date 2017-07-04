@@ -21,7 +21,7 @@
             span.pull-right
               time(am-time-ago="offering.lastUpdate")
             p v{{ offering.version }}
-            p.item-description {{ offering.description ? offering.description : 'No description provided.' }}
+            p.item-description {{ offering.description ? offering.description : '无描述' }}
           .h5.text-right
             strong {{ offering.formatCheapestPriceplan() }}
           .status-group
@@ -32,11 +32,11 @@
       table.table.table-bordered.table-hover
         thead
           tr
-            th Status
-            th Name
-            th Product Spec.
-            th Type
-            th Updated
+            th 状态
+            th 名称
+            th 产品规格
+            th 类型
+            th 更新时间
         tbody
           tr(ng-repeat="offering in updateVM.item.bundledProductOffering")
             td

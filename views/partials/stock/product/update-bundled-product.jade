@@ -21,7 +21,7 @@
             span.pull-right
               time(am-time-ago="product.lastUpdate")
             p v{{ product.version }}
-            p {{ product.description ? product.description : 'No description provided.' }}
+            p {{ product.description ? product.description : '无描述' }}
           .status-group
             .status-item.active(class="status-{{ product.lifecycleStatus | lowercase }}")
               span.item-icon
@@ -30,12 +30,12 @@
       table.table.table-bordered.table-hover
         thead
           tr
-            th Status
-            th Name
+            th 状态
+            th 名称
             th ID
-            th Brand
-            th Type
-            th Updated
+            th 品牌
+            th 类型
+            th 更新时间
         tbody
           tr(ng-repeat="productSpec in updateVM.item.bundledProductSpecification")
             td

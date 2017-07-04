@@ -12,11 +12,11 @@
               time(title="{{ productOrder.orderDate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}") {{ productOrder.orderDate | amCalendar }}
           .small
             dl.dl-horizontal.order-title-group
-              dt.order-title Customer
+              dt.order-title 顾客
               dd.order-title-info {{ productOrder.getCustomer().id }}
-              dt.order-title Status
+              dt.order-title 状态
               dd.order-title-info {{ productOrder.state }}
-              dt.order-title Priority
+              dt.order-title 优先级
               dd.order-title-info {{ productOrder.priority }}
       .panel-body
         .row(ng-repeat="orderItem in productOrder.orderItem")
@@ -37,11 +37,11 @@
                 a(ui-sref="offering.detail({ offeringId: orderItem.productOffering.id })", ui-sref-opts="{ inherit: false }")
                   span.item-text {{ orderItem.productOffering.name }}
             dl
-              dt Description
-              dd.text-dark-secondary {{ orderItem.productOffering.description ? orderItem.productOffering.description : 'No description provided.' }}
-              dt State
+              dt 描述
+              dd.text-dark-secondary {{ orderItem.productOffering.description ? orderItem.productOffering.description : '无描述' }}
+              dt 状态
               dd.text-dark-secondary {{ orderItem.state }}
-              dt Price
+              dt 价格
               dd.text-dark-secondary {{ productOrder.formatPriceplanOf($index) }}
-              dt Appointment
-              dd.text-dark-secondary {{ orderItem.appointment ? orderItem.appointment : 'No appointment included.' }}
+              dt 预定
+              dd.text-dark-secondary {{ orderItem.appointment ? orderItem.appointment : '无预定' }}

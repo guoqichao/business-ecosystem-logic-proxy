@@ -19,19 +19,19 @@
           ng-messages="updateVM.form.name.$error"
           ng-show="updateForm.hasError(updateVM.form.name)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="maxlength") This field must not exceed 30 chars.
-          span(ng-message="unique") This name is already taken.
+          span(ng-message="required") 必填字段
+          span(ng-message="maxlength") 字段不能超过 30 个字符.
+          span(ng-message="unique") 名称已经被占用.
       .form-group
         label Status
         .status-group
           .status-item(ng-repeat="status in FILTER_STATUS", class="status-{{ status.value | lowercase }}", ng-class="{ active: updateVM.data.lifecycleStatus == status.value }")
             span.item-icon
-            span.item-text {{ status.value }}
+            span.item-text {{  status.value }}
       .form-group
         label
           span Description
-          small.text-muted (optional)
+          small.text-muted (可选)
         textarea.form-control(rows="3", name="description", ng-model="updateVM.data.description")
       .form-group.text-right
         a.btn.btn-success(

@@ -6,38 +6,41 @@
       .panel.panel-default
         .panel-heading
           .panel-heading-wrapper
-            h3.panel-title Order details
+            h3.panel-title 订单详情
             .panel-actions
               a.btn.btn-sm.btn-danger(ng-if="detailVM.can('cancel')" bs-tooltip title="Cancel" ng-click="detailVM.cancel()" ng-disabled="detailVM.cancel.status === detailVM.STATUS.PENDING")
                 span.fa(ng-class="detailVM.cancel.status === detailVM.STATUS.PENDING ? ['fa-circle-o-notch', 'fa-spin'] : 'fa-close'")
         .panel-body
           .dl-list
             dl
-              dt Name
+              dt 名称
               dd {{ detailVM.item.externalId ? detailVM.item.externalId : 'No data provided.' }}
-              dt Customer name
+              dt 顾客
               dd {{ detailVM.getCustomerName() }}
-              dt Notification email
+              dt 通知邮件
               dd {{ detailVM.item.notificationContact }}
-              dt Shipping address
+              dt 邮寄地址
               dd
                 span.text-preline {{ detailVM.getShippingAddress() }}
             dl
-              dt Order date
+              dt 订单日期
               dd {{ detailVM.item.orderDate ? (detailVM.item.orderDate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a') : 'No data provided' }}
-              dt Priority
+              dt 优先级
               dd {{ detailVM.item.priority }}
-              dt Status
+              dt 状态
               dd {{ detailVM.item.state }}
-              dt Desired delivery date
+              dt 期望发货时间
+              // gqc Desired delivery date
               dd {{ detailVM.item.requestedCompletionDate ? (detailVM.item.requestedCompletionDate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a') : 'No data provided' }}
-              dt Expected delivery date
+              dt 预计发货时间
+              //gqc Expected delivery date
               dd {{ detailVM.item.expectedCompletionDate ? (detailVM.item.expectedCompletionDate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a') : 'No data provided' }}
         ul.nav.nav-pills.nav-justified
           li(ui-sref-active-eq="active")
-            a(ui-sref="inventory.productOrder.detail") Products
+            a(ui-sref="inventory.productOrder.detail") 产品
+            //gqc Products
           li(ui-sref-active-eq="active")
-            a(ui-sref="inventory.productOrder.detail.note") Notes
+            a(ui-sref="inventory.productOrder.detail.note") 备注
       ui-view
         include ./detail-product.jade
     .alert.alert-danger.text-center(ng-switch-when="ERROR") {{ detailVM.error }}

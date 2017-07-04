@@ -1,16 +1,16 @@
 .row
   .col-xs-12
     .alert.alert-info(ng-if="!updateVM.item.productOfferingPrice.length")
-      span No price plans found.
+      span 没有价格计划
     price-plan-table(controller="updateVM" data="updateVM.item.productOfferingPrice")
   .col-xs-12
     .form-group.text-left(ng-if="!updateVM.pricePlanEnabled")
       a.btn.btn-default.z-depth-1(ng-click="updateVM.pricePlanEnabled = true")
-        span.item-text New price plan
+        span.item-text 添加价格计划
     .panel.panel-default.z-depth-1(ng-if="updateVM.pricePlanEnabled")
       .panel-body
         .h4.text-dark-primary
-          strong New price plan
+          strong 添加价格计划
         hr
         price-plan-form(form="updateVM.pricePlanCreateForm" controller="updateVM" data="updateVM.pricePlan")
         .form-group.text-right

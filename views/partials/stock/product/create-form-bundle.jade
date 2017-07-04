@@ -1,6 +1,7 @@
 form(name="step.form", novalidate)
   .item-toggle
-    label.toggle Is a new bundle of products?
+    //gqc Is a new bundle of products
+    label.toggle 是否是产品组合?
       .track
         input(
           type="checkbox"
@@ -10,7 +11,8 @@ form(name="step.form", novalidate)
         i.fa.fa-2x
   .row(ng-if="createVM.data.isBundle && createForm.stepIndex == $index", ng-controller="ProductSearchCtrl as searchVM")
     .col-xs-12(ng-if="searchVM.list.status === searchVM.STATUS.LOADED" ng-switch="searchVM.list.length")
-      .alert.alert-info.text-center(ng-switch-when="0") No products found.
+      .alert.alert-info.text-center(ng-switch-when="0") 没有产品
+      //No products found.
 
       div(ng-switch-default)
         .alert.alert-danger.text-center(ng-show="!step.form.$valid") Bundles must contain at least two product specs
@@ -18,12 +20,12 @@ form(name="step.form", novalidate)
           table.table.table-bordered.table-hover.table-selectable
             thead
               tr
-                th Status
-                th Name
+                th 状态
+                th 名称
                 th ID
-                th Brand
-                th Type
-                th Updated
+                th 品牌
+                th 类型
+                th 更新时间
             tbody
               tr(ng-repeat="product in searchVM.list", ng-class="{ active: createVM.hasProduct(product) }", ng-click="createVM.toggleProduct(product)")
                 td
@@ -48,4 +50,5 @@ form(name="step.form", novalidate)
 
   .form-group.text-right
     a.btn.btn-default.z-depth-1(ng-click="createForm.nextStep($index + 1, createVM.stepList[$index + 1])", ng-disabled="!step.form.$valid")
-      span.item-text Next
+      span.item-text 下一步
+      //gqc Next

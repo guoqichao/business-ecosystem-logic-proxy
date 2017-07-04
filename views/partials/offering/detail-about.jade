@@ -1,43 +1,46 @@
 .panel.panel-default.z-depth-1
   .panel-body
     .h4.text-dark-secondary(ng-if="!detailVM.item.isBundle")
-      strong Offering information
+      strong 产品信息
+      //gqc Offering information
     .h4.text-dark-secondary(ng-if="detailVM.item.isBundle")
-      strong Bundle information
+      strong 产品组合信息
+      //gqc Bundle information
     hr
     dl
-      dt Name
+      dt 名称
       dd.text-dark-secondary {{ detailVM.item.name }}
-      dt Version
+      dt 版本
       dd.text-dark-secondary {{ detailVM.item.version }}
-      dt Description
-      dd.text-dark-secondary.text-preline {{ detailVM.item.description ? detailVM.item.description : 'No description provided.' }}
-      dt(ng-if="detailVM.item.place.length") Places
+      dt 描述
+      dd.text-dark-secondary.text-preline {{ detailVM.item.description ? detailVM.item.description : '无描述' }}
+      dt(ng-if="detailVM.item.place.length") 位置
       dd(ng-if="detailVM.item.place.length")
         .h4
           .label.label-default.inline-block(ng-repeat="place in detailVM.item.place")
             span.item-text {{ place.name }}
-      dt Updated
+      dt 更新时间
       dd.text-dark-secondary
-        time {{ detailVM.item.lastUpdate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
+        time {{ detailVM.item.lastUpdate | amDateFormat: 'YYYY年MM月DD日, h:mm:ss a' }}
 
     div(ng-if="!detailVM.item.isBundle")
       .h4.text-dark-secondary
-        strong Product information
+        strong 产品规格
+        //Product information
       hr
       dl
-        dt Name
+        dt 名称
         dd.text-dark-secondary {{ detailVM.item.productSpecification.name }}
-        dt Version
+        dt 版本
         dd.text-dark-secondary {{ detailVM.item.productSpecification.version }}
-        dt Description
-        dd.text-dark-secondary.text-preline {{ detailVM.item.productSpecification.description  ? detailVM.item.productSpecification.description : 'No description provided.' }}
-        dt Updated
+        dt 描述
+        dd.text-dark-secondary.text-preline {{ detailVM.item.productSpecification.description  ? detailVM.item.productSpecification.description : '无描述' }}
+        dt 更新时间
         dd.text-dark-secondary
-          time {{ detailVM.item.productSpecification.lastUpdate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
-        dt Brand
+          time {{ detailVM.item.productSpecification.lastUpdate | amDateFormat: 'YYYY年MM月DD日, h:mm:ss' }}
+        dt 品牌
         dd.text-dark-secondary {{ detailVM.item.productSpecification.brand }}
-        dt ID Number
+        dt 编号
         dd.text-dark-secondary {{ detailVM.item.productSpecification.productNumber }}
 
         div(ng-if="detailVM.item.productSpecification.isBundle")
@@ -60,7 +63,7 @@
                     dt Version
                     dd.text-dark-secondary {{ product.version }}
                     dt Description
-                    dd.text-dark-secondary.text-preline {{ product.description  ? product.description : 'No description provided.' }}
+                    dd.text-dark-secondary.text-preline {{ product.description  ? product.description : '无描述' }}
                     dt Updated
                     dd.text-dark-secondary
                       time {{ product.lastUpdate | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}

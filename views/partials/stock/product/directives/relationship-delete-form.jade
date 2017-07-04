@@ -1,17 +1,18 @@
 .row(ng-controller="RelationshipDeleteCtrl as deleteVM")
   .col-xs-12(ng-if="!resource.productSpecificationRelationship.length")
     .alert.alert-info.text-center
-      span No relationships included.
+      span 没有关系
+      //No relationships included.
   .col-xs-12(ng-if="resource.productSpecificationRelationship.length")
     .table-responsive
       table.table.table-bordered
         thead
           tr
-            th Relationship
-            th Name
-            th Type
-            th Updated
-            th Actions
+            th 关系
+            th 名称
+            th 类型
+            th 更新时间
+            th 操作
         tbody
           tr(ng-repeat="relationship in resource.productSpecificationRelationship")
             td {{ relationship.parseType() }}

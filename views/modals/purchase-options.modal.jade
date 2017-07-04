@@ -3,7 +3,8 @@
     .modal-content
       .modal-header
         .h4
-          strong Available Options
+          strong 商品选项
+          //Available Options
       .modal-body
         .row
           .col-xs-12
@@ -13,7 +14,8 @@
                   span.item-text.text-nowrap {{ ($index + 1) + ". " + tab.title }}
           .col-xs-12(ng-if="createVM.tabActive === createVM.priceplansTab")
             .h4
-              strong Choose one
+              strong 请选择
+              //Choose one
             .container-flex
               div(offering-priceplan, ng-repeat="priceplan in createVM.priceplans", ng-click="createVM.setPriceplan(priceplan)", selectable="True")
           .col-xs-12(ng-if="createVM.tabActive === createVM.characteristicsTab")
@@ -30,7 +32,7 @@
                 .h4.text-dark-secondary
                   strong {{ charObject.characteristic.name }}
                 hr
-                p.text-dark-secondary {{ charObject.characteristic.description ? charObject.characteristic.description : 'No description provided.' }}
+                p.text-dark-secondary {{ charObject.characteristic.description ? charObject.characteristic.description : '无描述' }}
                 .item-radio(ng-repeat="characteristicValue in charObject.characteristic.productSpecCharacteristicValue")
                   label.radio
                     .track
@@ -57,6 +59,7 @@
       .modal-footer
         a.btn.btn-success.z-depth-1(data-dismiss="modal", ng-click="createVM.order()", ng-disabled="!createVM.isValid()")
           span.item-icon.fa.fa-shopping-cart
-          span.item-text Add to cart
+          span.item-text 加入购物车
+          //gqc Add to cart
         a.btn.btn-default.z-depth-1(data-dismiss="modal")
-          span.item-text Close
+          span.item-text 取消

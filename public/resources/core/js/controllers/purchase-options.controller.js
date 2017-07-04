@@ -38,13 +38,13 @@
         var priceplan = null;
 
         vm.characteristicsTab = {
-            title: "Characteristics"
+            title: "特性"
         };
         vm.priceplansTab = {
-            title: "Price plans"
+            title: "价格计划"
         };
         vm.legalTab = {
-            title: "Terms & Conditions"
+            title: "条款"
         };
 
         vm.tabs = [];

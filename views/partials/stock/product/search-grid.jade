@@ -12,7 +12,7 @@
         span.pull-right
           time(am-time-ago="product.lastUpdate")
         p v{{ product.version }}
-        p.item-description {{ product.description ? product.description : 'No description provided.' }}
+        p.item-description {{ product.description ? product.description : '无描述' }}
       .status-group
         .status-item.active(class="status-{{ product.lifecycleStatus | lowercase }}")
           span.item-icon

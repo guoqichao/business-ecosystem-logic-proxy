@@ -12,7 +12,7 @@
         span.pull-right
           time(am-time-ago="offering.lastUpdate")
         p v{{ offering.version }}
-        p.item-description {{ offering.description ? offering.description : 'No description provided.' }}
+        p.item-description {{ offering.description ? offering.description : '无描述' }}
       .h5.text-right
         strong {{ offering.formatCheapestPriceplan() }}
       .status-group

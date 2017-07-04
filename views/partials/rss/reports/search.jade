@@ -3,7 +3,8 @@ ui-view
     .col-xs-12(ng-switch="searchVM.list.status")
       div(ng-switch-when="LOADED", ng-switch="searchVM.list.length")
         div(ng-switch-when="0")
-          .alert.alert-info.text-center No reports found.
+          .alert.alert-info.text-center 没有报告
+          //No reports found.
         div(ng-switch-default)
           .panel-group.panel-group-report
             .panel.panel-default.z-depth-1(ng-repeat="report in searchVM.list")

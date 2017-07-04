@@ -12,10 +12,11 @@
         span.pull-right
           time(am-time-ago="offering.lastUpdate")
         p v{{ offering.version }}
-        p.item-description {{ offering.description ? offering.description : 'No description provided.' }}
+        p.item-description {{ offering.description ? offering.description : '无描述' }}
       .h5.text-right
         strong {{ offering.formatCheapestPricePlan() }}
     .btn-group.btn-group-justified(ng-show="user.isAuthenticated()")
       a.btn.btn-success.z-depth-1(ng-click="user.order(offering)", ng-disabled="user.contains(offering)")
         span.item-icon.fa(class="fa-{{ user.contains(offering) ? 'check-circle' : 'shopping-cart' }}")
-        span.item-text {{ user.contains(offering) ? 'Added' : 'Add to cart' }}
+        span.item-text {{ user.contains(offering) ? '已添加' : '加入购物车' }}
+        //gqc Add to cart

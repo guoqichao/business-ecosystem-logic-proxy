@@ -14,7 +14,8 @@ ui-view
     .col-xs-12(ng-switch="searchVM.list.status")
       div(ng-switch-when="LOADED", ng-switch="searchVM.list.length")
         div(ng-switch-when="0")
-          .alert.alert-info.text-center No transactions found.
+          .alert.alert-info.text-center 没有交易
+          //No transactions found.
         div(ng-switch-default ng-switch="searchVM.$params.flow")
           div(ng-switch-when="1")
             .panel.panel-default.z-depth-1(ng-repeat="tx in searchVM.list")
@@ -38,18 +39,18 @@ ui-view
                       dt Charged Amount
                       dd.text-dark-secondary {{ tx.chargedAmount }} {{ tx.currency }}
                       dt Description
-                      dd.text-dark-secondary {{ tx.description ? tx.description : 'No description provided.' }}
+                      dd.text-dark-secondary {{ tx.description ? tx.description : '无描述' }}
           .table-responsive(ng-switch-when="2")
             table.table.table-bordered
               thead
                 tr
                   th Timestamp
-                  th Type
+                  th 类型
                   th Product class
                   th Customer
                   th Product offering
                   th Amount
-                  th Description
+                  th 描述
               tbody
                 tr(ng-repeat="tx in searchVM.list")
                   th {{ tx.timestamp | amDateFormat: 'ddd, MMM Do YYYY, HH:mm' }}
@@ -58,7 +59,7 @@ ui-view
                   td {{ tx.customerId }}
                   td {{ tx.application }}
                   td {{ tx.chargedAmount }} {{ tx.currency }}
-                  td {{ tx.description ? tx.description : 'No description provided.' }}
+                  td {{ tx.description ? tx.description : '无描述' }}
       div(ng-switch-when="ERROR")
         .alert.alert-danger.text-center {{ searchVM.error }}
       div(ng-switch-default)

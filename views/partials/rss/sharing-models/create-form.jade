@@ -16,8 +16,8 @@ form(name="step.form", novalidate)
           ng-messages="step.form.productClass.$error"
           ng-show="createForm.hasError(step.form.productClass)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="maxlength") This field must not exceed 200 chars.
+          span(ng-message="required") 必填字段
+          span(ng-message="maxlength") 字段不能超过 200 个字符.
 
   .row
     .col-sm-6
@@ -50,11 +50,11 @@ form(name="step.form", novalidate)
         ng-messages="step.form.providerValue.$error"
         ng-show="createForm.hasError(step.form.providerValue)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="min") This field must not be a negative number.
-          span(ng-message="max") This field must not be higher than 100.
-          span(ng-message="number") This field must be a valid number.
+          span(ng-message="required") 必填字段
+          span(ng-message="min") 字段值不能是负数.
+          span(ng-message="max") 字段值必须大于100.
+          span(ng-message="number") 字段必须是合法的数字.
 
   .form-group.text-right
     a.btn.btn-default.z-depth-1(ng-click="createForm.nextStep($index + 1, createVM.stepList[$index + 1])", ng-disabled="!step.form.$valid")
-      span.item-text Next
+      span.item-text 下一步

@@ -2,7 +2,8 @@ form(name="step.form", novalidate)
   .row
     .col-sm-8
       .form-group
-        label Name
+        label 名称
+        //gqc Name
         input.form-control(
           type="text"
           name="name"
@@ -12,7 +13,8 @@ form(name="step.form", novalidate)
         )
     .col-sm-4
       .form-group
-        label Version
+        label 版本
+        //gqc Version
         input.form-control(
           type="text"
           name="version"
@@ -21,7 +23,8 @@ form(name="step.form", novalidate)
           readonly
         )
   .form-group
-    label Status
+    label 状态
+    //gqc Status
     .status-group
       .status-item(ng-repeat="status in FILTER_STATUS", class="status-{{ status.value | lowercase }}", ng-class="{ active: createVM.data.lifecycleStatus == status.value }")
         span.item-icon
@@ -29,7 +32,8 @@ form(name="step.form", novalidate)
   .row
     .col-sm-8
       .form-group
-        label Brand
+        label 品牌
+        //gqc Brand
         input.form-control(
           type="text"
           name="brand"
@@ -39,7 +43,8 @@ form(name="step.form", novalidate)
         )
     .col-sm-4
       .form-group
-        label ID Number
+        label 序列号
+        //gqc ID Number
         input.form-control(
           type="text"
           name="productNumber"
@@ -48,7 +53,8 @@ form(name="step.form", novalidate)
           readonly
         )
   .form-group
-    label Description
+    label 描述
+    //gqc Description
     textarea.form-control(
       rows="3"
       name="description"
@@ -58,14 +64,15 @@ form(name="step.form", novalidate)
   .row(ng-if="createVM.characteristics.length")
     .col-sm-12
       .h4.text-dark-secondary
-        strong Characteristics
+        strong 特性
+        //Characteristics
       table.table.table-bordered
         thead
           tr
             th #
-            th Name
-            th Type
-            th Values
+            th 名称
+            th 类型
+            th 值
             th Default
         tbody
           tr(ng-repeat="characteristic in createVM.characteristics")
@@ -95,10 +102,10 @@ form(name="step.form", novalidate)
       table.table.table-bordered
         thead
           tr
-            th Status
-            th Name
-            th Type
-            th Updated
+            th 状态
+            th 名称
+            th 类型
+            th 更新时间
         tbody
           tr(ng-repeat="product in createVM.data.bundledProductSpecification")
             td
@@ -119,10 +126,10 @@ form(name="step.form", novalidate)
         table.table.table-bordered
           thead
             tr
-              th Relationship
-              th Name
-              th Type
-              th Updated
+              th 关系
+              th 名称
+              th 类型
+              th 更新时间
           tbody
             tr(ng-repeat="relationship in createVM.data.productSpecificationRelationship")
               td {{ relationship.parseType() }}

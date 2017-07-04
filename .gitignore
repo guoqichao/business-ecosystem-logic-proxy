@@ -5,3 +5,5 @@ cert
 coverage
 xunit.xml
 /indexes
+.idea
+*.iml

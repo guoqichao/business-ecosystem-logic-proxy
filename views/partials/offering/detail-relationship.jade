@@ -1,7 +1,8 @@
 .row
   .col-xs-12(ng-if="!detailVM.item.relationships().length")
     .alert.alert-info.text-center
-      span No relationships found.
+      span 没有关系数据
+      //No relationships found.
   .col-xs-12(ng-if="detailVM.item.relationships().length")
     .container-flex
       .panel.panel-default.item-offering.z-depth-1(ng-repeat="productOffering in detailVM.item.relationships()")
@@ -19,10 +20,11 @@
             span.pull-right
               time(am-time-ago="productOffering.lastUpdate")
             p v{{ productOffering.version }}
-            p.item-description {{ productOffering.description ? productOffering.description : 'No description provided.' }}
+            p.item-description {{ productOffering.description ? productOffering.description : '无描述' }}
           .h5.text-right
             strong {{ productOffering.formatCheapestPricePlan() }}
         .btn-group.btn-group-justified(ng-show="user.isAuthenticated()")
           a.btn.btn-success.z-depth-1(ng-click="user.order(productOffering)", ng-disabled="user.contains(productOffering)")
             span.item-icon.fa(class="fa-{{ user.contains(productOffering) ? 'check-circle' : 'shopping-cart' }}")
-            span.item-text {{ user.contains(productOffering) ? 'Added' : 'Add to cart' }}
+            span.item-text {{ user.contains(productOffering) ? '已添加' : '加入购物车' }}
+            //gqc Add to cart

@@ -36,7 +36,8 @@
             .state('stock', {
                 url: '/stock',
                 data: {
-                    title: 'My Stock',
+                    title: '我的货架',
+                    //gqc 'My Stock',
                     loggingRequired: true
                 },
                 views: {

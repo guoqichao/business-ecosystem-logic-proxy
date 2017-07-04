@@ -1,8 +1,9 @@
 .panel.panel-default.z-depth-1(ng-switch="listVM.list.status")
   .panel-heading
     .h4
-      strong Search by catalog
-  ul.nav.nav-stacked.nav-pills(ng-switch-when="LOADED")
+      strong 目录
+      //gqc Search by catalog
+ ul.nav.nav-stacked.nav-pills(ng-switch-when="LOADED")
     li(ui-sref-active-eq="active")
       a(ui-sref="offering({ catalogueId: null })", ui-sref-opts="{ reload: true, inherit: false }")
         span.item-icon.fa.fa-angle-right

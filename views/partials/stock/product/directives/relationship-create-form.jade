@@ -7,19 +7,21 @@
           span.fa.fa-spinner.fa-spin.fa-2x
       .col-xs-12(ng-if="createVM.list.status === createVM.STATUS.LOADED")
         .form-group
-          label Choose a relationship
+          label 选择关系
+          //gqc Choose a relationship
           select.form-control(name="type" ng-model="createVM.data.type")
             option(ng-repeat="(key, value) in createVM.RELATIONSHIPS" value="{{ value.code }}") {{ value.name }}
         .form-group
-          label Choose a product specification
+          label 选择产品规格
+          //gqc Choose a product specification
           input(type="hidden" ng-model="createVM.data.productSpec.id" required)
           .table-responsive
             table.table.table-bordered.table-hover.table-selectable
               thead
                 tr
-                  th Name
-                  th Type
-                  th Updated
+                  th 名称
+                  th 类型
+                  th 更新时间
               tbody
                 tr(ng-repeat="productSpec in createVM.list" ng-class="{ active: productSpec.id === createVM.data.productSpec.id, disabled: createVM.hasRelationship(resource, productSpec) }" ng-click="createVM.setProductSpec(productSpec)")
                   th {{ productSpec.name }}
@@ -34,5 +36,6 @@
           ng-disabled="!createVM.form.$valid || createVM.create.status === createVM.STATUS.LOADING"
           )
             span.item-icon.fa.fa-spin.fa-spinner(ng-if="createVM.create.status === createVM.STATUS.LOADING")
-            span.item-text Create
+            span.item-text 创建
+            //gqc Create
       pager(controller="createVM", size="10", max="12")

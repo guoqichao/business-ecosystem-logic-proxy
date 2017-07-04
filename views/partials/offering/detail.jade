@@ -3,10 +3,10 @@
     .breadcrumb-triangle.z-depth-1
       a(ui-sref="offering", ui-sref-opts="{ reload: true, inherit: false }", ui-sref-active-eq="active")
         span.item-icon.fa.fa-chevron-left
-        span.item-text Back
+        span.item-text 返回
       a.active(ng-if="detailVM.$state.includes('offering.detail')", ui-sref="offering.detail", ui-sref-opts="{ reload: true }")
         span.item-icon.fa.fa-binoculars
-        span.item-text Details
+        span.item-text 详情
 .row(ng-switch="detailVM.item.status")
   .col-xs-12(ng-switch-when="LOADED")
     include ./detail-content.jade

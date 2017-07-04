@@ -18,6 +18,6 @@
             .row(ng-repeat="step in createVM.stepList", ng-show="createForm.stepIndex == $index")
               .col-xs-12
                 .h4.text-dark-secondary
-                  strong Step {{ $index + 1}}: {{ step.title }}
+                  strong 步骤 {{ $index + 1}}: {{ step.title }}
                 ng-include(src="step.templateUrl")
 

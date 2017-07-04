@@ -4,7 +4,8 @@ form(name="step.form", novalidate)
       .form-group(
         ng-class="{ 'has-error': createVM.hasFieldError(step.form.name) }"
       )
-        label Enter a name
+        label 名称
+        //gqc Enter a name
         input.form-control(
           type="text"
           name="name"
@@ -16,14 +17,15 @@ form(name="step.form", novalidate)
           ng-messages="step.form.name.$error"
           ng-show="createVM.hasFieldError(step.form.name)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="maxlength") This field must not exceed 30 chars.
-          span(ng-message="unique") This name is already taken.
+          span(ng-message="required") 必填字段
+          span(ng-message="maxlength") 字段不能超过 30 个字符.
+          span(ng-message="unique") 名称已经被占用.
     .col-sm-4
       .form-group(
         ng-class="{ 'has-error' : createVM.hasFieldError(step.form.version) }"
       )
-        label Enter a version
+        label 版本
+        //gqc Enter a version
         input.form-control(
           type="text"
           name="version"
@@ -35,17 +37,19 @@ form(name="step.form", novalidate)
           ng-messages="step.form.version.$error"
           ng-show="createVM.hasFieldError(step.form.version)"
         )
-          span(ng-message="required") This field is required.
+          span(ng-message="required") 必填字段
           span(ng-message="pattern") Invalid version format
   .form-group
     label
-      span Enter a description
-      small.text-muted (optional)
+      span 描述
+      //gqc Enter a description
+      small.text-muted (可选)
     textarea.form-control(rows="3", name="description", ng-model="createVM.data.description")
   .form-group
     label
-      span Enter places
-      small.text-muted (optional)
+      span 位置
+      //gqc Enter places
+      small.text-muted (可选)
     .input-group
       input.form-control(
         type="text"
@@ -61,4 +65,5 @@ form(name="step.form", novalidate)
       span.item-icon.fa.fa-remove(ng-click="createVM.removePlace($index)")
   .form-group.text-right
     a.btn.btn-default.z-depth-1(ng-click="createForm.nextStep($index + 1, createVM.stepList[$index + 1])", ng-disabled="!step.form.$valid")
-      span.item-text Next
+      span.item-text 下一步
+      //gqc Next

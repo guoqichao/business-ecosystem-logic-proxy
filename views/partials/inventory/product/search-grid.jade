@@ -12,7 +12,7 @@
         span.pull-right
           time(am-time-ago="product.startDate")
         p v{{ product.productOffering.version }}
-        p.item-description {{ product.productOffering.description ? product.productOffering.description : 'No description provided.' }}
+        p.item-description {{ product.productOffering.description ? product.productOffering.description : '无描述' }}
       .status-group
         .status-item.active(class="status-{{ product.status | lowercase }}")
           span.item-icon

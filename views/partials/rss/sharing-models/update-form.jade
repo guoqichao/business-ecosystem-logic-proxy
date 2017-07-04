@@ -16,8 +16,8 @@ form(name="updateVM.form", novalidate)
           ng-messages="updateVM.form.productClass.$error"
           ng-show="updateForm.hasError(updateVM.form.productClass)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="maxlength") This field must not exceed 200 chars.
+          span(ng-message="required") 必填字段
+          span(ng-message="maxlength") 字段不能超过 200 个字符.
 
   .row
     .col-sm-6
@@ -50,10 +50,10 @@ form(name="updateVM.form", novalidate)
             ng-messages="updateVM.form.providerValue.$error"
             ng-show="updateForm.hasError(updateVM.form.providerValue)"
           )
-            span(ng-message="required") This field is required.
-            span(ng-message="min") This field must not be a negative number.
-            span(ng-message="max") This field must not be higher than 100.
-            span(ng-message="number") This field must be a valid number.
+            span(ng-message="required") 必填字段
+            span(ng-message="min") 字段值不能是负数.
+            span(ng-message="max") 字段值必须大于100.
+            span(ng-message="number") 字段必须是合法的数字.
 
   table.table.table-bordered(ng-if="updateVM.data.stakeholders.length")
     thead
@@ -107,10 +107,10 @@ form(name="updateVM.form", novalidate)
               ng-messages="updateVM.stakeholdersForm.stValue.$error"
               ng-show="updateForm.hasError(updateVM.stakeholdersForm.stValue)"
             )
-              span(ng-message="required") This field is required.
-              span(ng-message="min") This field must not be a negative number.
-              span(ng-message="max") This field must not be higher than 100.
-              span(ng-message="number") This field must be a valid number.
+              span(ng-message="required") 必填字段
+              span(ng-message="min") 字段值不能是负数.
+              span(ng-message="max") 字段值必须大于100.
+              span(ng-message="number") 字段必须是合法的数字.
 
       .row
         .col-sm-6

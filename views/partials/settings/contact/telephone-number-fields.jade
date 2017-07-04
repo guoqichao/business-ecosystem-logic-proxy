@@ -13,8 +13,8 @@
         ng-messages="form.type.$error"
         ng-show="vm.hasFieldError(form.type)"
       )
-        span(ng-message="required") This field is required.
-        span(ng-message="maxlength") This field must not exceed 30 chars.
+        span(ng-message="required") 必填字段
+        span(ng-message="maxlength") 字段不能超过 30 个字符.
   .col-sm-6
     .form-group(ng-class="{ 'has-error': vm.hasFieldError(form.number) }")
       label Number
@@ -30,5 +30,5 @@
         ng-messages="form.number.$error"
         ng-show="vm.hasFieldError(form.number)"
       )
-        span(ng-message="required") This field is required.
-        span(ng-message="internationalPhoneNumber") This field must be a valid number.
+        span(ng-message="required") 必填字段
+        span(ng-message="internationalPhoneNumber") 字段必须是合法的数字.

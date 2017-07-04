@@ -1,6 +1,6 @@
 //! moment.js
 //! version : 2.10.6
-//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+//! authors : Tim Wood, Iskren Chernev, Moment.js contributors /gqc
 //! license : MIT
 //! momentjs.com
 
@@ -2661,21 +2661,21 @@
     function preParsePostFormat (string) {
         return string;
     }
-
+    //gqc
     var defaultRelativeTime = {
         future : 'in %s',
-        past   : '%s ago',
-        s  : 'a few seconds',
-        m  : 'a minute',
-        mm : '%d minutes',
-        h  : 'an hour',
-        hh : '%d hours',
-        d  : 'a day',
-        dd : '%d days',
-        M  : 'a month',
-        MM : '%d months',
-        y  : 'a year',
-        yy : '%d years'
+        past   : '%s 前',
+        s  : '刚刚',
+        m  : '一分钟',
+        mm : '%d 分钟',
+        h  : '一小时',
+        hh : '%d 小时',
+        d  : '一天',
+        dd : '%d 天',
+        M  : '一月',
+        MM : '%d 月',
+        y  : '一年',
+        yy : '%d 年'
     };
 
     function relative__relativeTime (number, withoutSuffix, string, isFuture) {

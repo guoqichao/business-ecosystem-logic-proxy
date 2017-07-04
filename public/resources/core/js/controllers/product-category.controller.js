@@ -86,11 +86,11 @@
         var vm = this;
         var stepList = [
             {
-                title: 'General',
+                title: '基本信息',
                 templateUrl: 'admin/product-category/create/general'
             },
             {
-                title: 'Finish',
+                title: '完成',
                 templateUrl: 'admin/product-category/create/finish'
             }
         ];

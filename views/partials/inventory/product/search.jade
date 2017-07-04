@@ -5,7 +5,8 @@ ui-view
     .col-xs-12(ng-switch="searchVM.list.status")
       div(ng-switch-when="LOADED", ng-switch="searchVM.list.length")
         div(ng-switch-when="0")
-          .alert.alert-info.text-center No products found.
+          .alert.alert-info.text-center 没有产品
+          //gqc No products found.
         div(ng-switch-default, ng-switch="searchVM.list.flow")
           div(ng-switch-when="1")
             include ./search-grid.jade

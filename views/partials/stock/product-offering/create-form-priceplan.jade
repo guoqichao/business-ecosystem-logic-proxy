@@ -3,7 +3,7 @@
     price-plan-table(controller="createVM" data="createVM.data.productOfferingPrice")
   .col-xs-12(ng-if="!createVM.data.productOfferingPrice.length")
     .alert.alert-info.text-center
-      | No price plans included.
+      | 没有价格计划
   .col-xs-12(ng-if="createVM.pricePlanEnabled")
     .h4.text-dark-primary
       strong New price plan
@@ -21,4 +21,4 @@
     form(name="step.form" novalidate)
       .form-group.text-right
         a.btn.btn-default.z-depth-1(ng-click="createForm.nextStep($index + 1, createVM.stepList[$index + 1])")
-          span.item-text Next
+          span.item-text 下一步

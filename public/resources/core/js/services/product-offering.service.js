@@ -20,7 +20,7 @@
 /**
  * @author Francisco de la Vega <fdelavega@conwet.com>
  *         Jaime Pajuelo <jpajuelo@conwet.com>
- *         Aitor Magán <amagan@conwet.com>
+ *         Aitor Magán <amagan@conwet.com> //gqc
  */
 
 (function () {
@@ -63,7 +63,7 @@
             },
             CURRENCY_CODE: {
                 CAD: 'canadian dollar',
-                EUR: 'euro',
+                RMB: '人民币',
                 USD: 'us dollar'
             },
             PRICE: {
@@ -75,7 +75,7 @@
 
         var TEMPLATES = {
             PRICE: {
-                currencyCode: 'EUR',
+                currencyCode: 'RMB',
                 dutyFreeAmount: 0,
                 percentage: 0,
                 taxIncludedAmount: 0,
@@ -572,12 +572,12 @@
                             pricePlan = this.productOfferingPrice[i];
                         }
                     }
-                    result = 'From ' + pricePlan.toString();
+                    result = '' + pricePlan.toString();
                 } else {
                     pricePlans = this.productOfferingPrice.filter(function (pricePlan) {
                         return [TYPES.PRICE.RECURRING, TYPES.PRICE.USAGE].indexOf(angular.lowercase(pricePlan.priceType)) !== -1;
                     });
-                    result = 'From ' + pricePlans[0].toString();
+                    result = '' + pricePlans[0].toString();
                 }
             } else {
                 result = 'Free';

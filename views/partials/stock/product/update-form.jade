@@ -1,12 +1,12 @@
 form(name="updateVM.form", novalidate)
   .h4.text-dark-secondary
-    strong General
+    strong 基本信息
   .row
     .col-sm-8
       .form-group(
         ng-class="{ 'has-error': updateForm.hasError(updateVM.form.name) }"
       )
-        label Name
+        label 名称
         input.form-control(
           type="text"
           name="name"
@@ -20,14 +20,14 @@ form(name="updateVM.form", novalidate)
           ng-messages="updateVM.form.name.$error"
           ng-show="updateForm.hasError(updateVM.form.name)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="maxlength") This field must not exceed 30 chars.
-          span(ng-message="unique") This name is already taken.
+          span(ng-message="required") 必填字段
+          span(ng-message="maxlength") 字段不能超过 30 个字符.
+          span(ng-message="unique") 名称已经被占用.
     .col-sm-4
       .form-group(
         ng-class="{ 'has-error': updateForm.hasError(updateVM.form.version) }"
       )
-        label Version
+        label 版本
         input.form-control(
           type="text"
           name="version"
@@ -38,9 +38,9 @@ form(name="updateVM.form", novalidate)
           ng-messages="updateVM.form.version.$error"
           ng-show="updateForm.hasError(updateVM.form.version)"
         )
-          span(ng-message="required") This field is required.
+          span(ng-message="required") 必填字段
   .form-group
-    label Status
+    label 状态
     .status-group
       .status-item(ng-repeat="status in FILTER_STATUS", class="status-{{ status.value | lowercase }}", ng-click="updateVM.updateStatus(status.value)", ng-class="{ active: updateVM.data.lifecycleStatus == status.value, enabled: updateVM.data.lifecycleStatus == status.value && !updateVM.statusUpdated }")
         span.item-icon
@@ -50,7 +50,7 @@ form(name="updateVM.form", novalidate)
       .form-group(
         ng-class="{ 'has-error' : updateForm.hasError(updateVM.form.brand) }"
       )
-        label Brand
+        label 品牌
         input.form-control(
           type="text"
           name="brand"
@@ -62,13 +62,13 @@ form(name="updateVM.form", novalidate)
           ng-messages="updateVM.form.brand.$error"
           ng-show="updateForm.hasError(updateVM.form.brand)"
         )
-          span(ng-message="required") This field is required.
-          span(ng-message="maxlength") This field must not exceed 30 chars.
+          span(ng-message="required") 必填字段
+          span(ng-message="maxlength") 字段不能超过 30 个字符.
     .col-sm-4
       .form-group(
         ng-class="{ 'has-error' : updateForm.hasError(updateVM.form.productNumber) }"
       )
-        label ID Number
+        label 序列号
         input.form-control(
           type="text"
           name="productNumber"
@@ -79,11 +79,11 @@ form(name="updateVM.form", novalidate)
           ng-messages="updateVM.form.productNumber.$error"
           ng-show="updateForm.hasError(updateVM.form.productNumber)"
         )
-          span(ng-message="required") This field is required.
+          span(ng-message="required") 必填字段
   .form-group
     label
-      span Description
-      small.text-muted (optional)
+      span 描述
+      small.text-muted (可选)
     textarea.form-control(rows="3", name="description", ng-model="updateVM.data.description")
   .form-group.text-right
     a.btn.btn-success(
@@ -91,4 +91,4 @@ form(name="updateVM.form", novalidate)
       ng-disabled="!updateVM.form.$valid || updateVM.update.status === updateVM.STATUS.PENDING"
     )
       span.item-icon.fa.fa-spin.fa-spinner(ng-if="updateVM.update.status === updateVM.STATUS.PENDING")
-      span.item-text Update
+      span.item-text 更新

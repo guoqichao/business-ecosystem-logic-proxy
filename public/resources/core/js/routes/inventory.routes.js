@@ -36,7 +36,8 @@
             .state('inventory', {
                 url: '/inventory',
                 data: {
-                    title: 'My Inventory',
+                    title: '我的存货',
+                    //gqc'My Inventory',
                     loggingRequired: true
                 },
                 views: {

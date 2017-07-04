@@ -11,10 +11,10 @@ ui-view
             table.table.table-bordered.table-hover.table-selectable
               thead
                 tr
-                  th Product Class
-                  th Platform Percentage
-                  th Provider Percentage
-                  th Nº Stakeholders
+                  th 分成类型
+                  th 平台占比
+                  th 供应商占比
+                  th 其他干系人占比
               tbody
                 tr(ng-repeat="rsModel in searchVM.list",
                   ui-sref="rss.models.update({ productClass: rsModel.productClass })",

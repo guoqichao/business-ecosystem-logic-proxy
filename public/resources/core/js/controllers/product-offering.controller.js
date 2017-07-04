@@ -105,35 +105,35 @@
 
         var stepList = [
             {
-                title: 'General',
+                title: '基本信息',
                 templateUrl: 'stock/product-offering/create/general'
             },
             {
-                title: 'Bundle',
+                title: '产品组合',
                 templateUrl: 'stock/product-offering/create/bundle'
             },
             {
-                title: 'Product Spec.',
+                title: '产品规格',
                 templateUrl: 'stock/product-offering/create/product'
             },
             {
-                title: 'Catalogue',
+                title: '产品目录',
                 templateUrl: 'stock/product-offering/create/catalogue'
             },
             {
-                title: 'Category',
+                title: '产品类型',
                 templateUrl: 'stock/product-offering/create/categories'
             },
             {
-                title: 'Price Plans',
+                title: '价格计划',
                 templateUrl: 'stock/product-offering/create/priceplan'
             },
             {
-                title: 'RS Model',
+                title: '利润分配模型',
                 templateUrl: 'stock/product-offering/create/sharing'
             },
             {
-                title: 'Finish',
+                title: '完成',
                 templateUrl: 'stock/product-offering/create/finish'
             }
         ];

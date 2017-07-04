@@ -79,14 +79,17 @@ html(ng-app="app")
           .dropdown-menu.z-depth-3
             a.dropdown-menu-item(ui-sref="offering", ui-sref-opts="{ reload: true, inherit: false }")
               span.item-icon.fa.fa-home
-              span.item-text Home
+              span.item-text 主页
+              //gqc Home
             if user
               a.dropdown-menu-item(ui-sref="stock", ui-sref-opts="{ reload: true, inherit: false }", ng-show="user.isSeller()")
                 span.item-icon.fa.fa-database
-                span.item-text My stock
+                span.item-text 我的货架
+                //gqc My stock
               a.dropdown-menu-item(ui-sref="inventory", ui-sref-opts="{ reload: true, inherit: false }")
                 span.item-icon.fa.fa-archive
-                span.item-text My inventory
+                span.item-text 我的存货
+                //gqc My inventory
           a.navbar-brand.hidden-xs(href="#{ contextPath }")
             img(src="#{ contextPath }/resources/core/images/fiware-tmforum-logo.png")
         .navbar-text {{ title }}
@@ -135,14 +138,15 @@ html(ng-app="app")
       hr.fiware-line
       .col-sm-6
         ul.list-inline
-          li.small © 2015-2016 CoNWeT Lab., Universidad Politécnica de Madrid
+          li.small © 2016-2017 21Vianet Group, Inc. All Rights Reserved.
       .col-sm-6
         ul.list-inline.pull-right
           li.small
-            a(href="https://www.fiware.org") FIWARE
+            a(href="http://www.ch.21vianet.com/") 世纪互联
+            //a(href="https://www.fiware.org") FIWARE
           li.small ·
           li.small
-            a(href="https://www.tmforum.org") TM FORUM
+            //a(href="https://www.tmforum.org") TM FORUM
 
     if user
       include ./modals/user-profile.modal.jade

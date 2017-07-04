@@ -4,7 +4,8 @@
       .row
         .col-sm-8
           .form-group(ng-class="{ 'has-error': createForm.hasError(step.characteristicForm.name) }")
-            label Enter a name
+            label 名称
+            //gqc Enter a name
             input.form-control(
               type="text"
               name="name"
@@ -16,8 +17,8 @@
               ng-messages="step.characteristicForm.name.$error"
               ng-show="createForm.hasError(step.characteristicForm.name)"
             )
-              span(ng-message="required") This field is required.
-              span(ng-message="maxlength") This field must not exceed 30 chars.
+              span(ng-message="required") 必填字段
+              span(ng-message="maxlength") 字段不能超过 30 个字符.
         .col-sm-4
           .form-group
             label Choose a type
@@ -31,15 +32,18 @@
         .col-md-12
           .form-group
             label
-              span Enter a description
-              small.text-muted (optional)
+              span 描述
+              //gqc Enter a description
+              small.text-muted (可选)
             textarea.form-control(name="description", rows="3", ng-model="createVM.characteristic.description")
     form(name="step.characteristicValuesForm", novalidate)
-      label Values
+      label 值
+      //Values
       input(type="hidden", name="values", ng-model="createVM.characteristic.productSpecCharacteristicValue", field-array, limit-from="1", required)
     .row
       .col-xs-12(ng-if="!createVM.characteristic.productSpecCharacteristicValue.length")
-        .alert.alert-warning.text-center Must be at least one value for each characteristic.
+        .alert.alert-warning.text-center 每个特性至少需要一个值
+        //Must be at least one value for each characteristic.
       .col-sm-12(ng-if="createVM.characteristic.productSpecCharacteristicValue.length")
         .form-group
           .input-group(ng-repeat="characteristicValue in createVM.characteristic.productSpecCharacteristicValue")
@@ -52,7 +56,8 @@
               a.btn.btn-danger.z-depth-0(ng-click="createVM.removeCharacteristicValue($index)")
                 span.item-icon.fa.fa-trash
     .h5.text-dark-secondary
-      strong Create a value
+      strong 新建值
+      //gqc Create a value
     form(name="step.characteristicValueForm", novalidate)
       .row
         .col-sm-10
@@ -69,7 +74,7 @@
                   ng-messages="step.characteristicValueForm.value.$error"
                   ng-show="createForm.hasError(step.characteristicValueForm.value)"
                 )
-                  span(ng-message="required") This field is required.
+                  span(ng-message="required") 必填字段
             .col-sm-12(ng-if="createVM.characteristic.valueType === createVM.VALUE_TYPES.NUMBER")
               .row
                 .col-sm-8
@@ -84,7 +89,7 @@
                       ng-messages="step.characteristicValueForm.value.$error"
                       ng-show="createForm.hasError(step.characteristicValueForm.value)"
                     )
-                      span(ng-message="required") This field is required.
+                      span(ng-message="required") 必填字段
                 .col-sm-4
                   .form-group(ng-class="{ 'has-error': createForm.hasError(step.characteristicValueForm.unitOfMeasure) }")
                     .input-group
@@ -100,8 +105,8 @@
                       ng-messages="step.characteristicValueForm.unitOfMeasure.$error"
                       ng-show="createForm.hasError(step.characteristicValueForm.unitOfMeasure)"
                     )
-                      span(ng-message="required") This field is required.
-                      span(ng-message="maxlength") This field must not exceed 20 chars.
+                      span(ng-message="required") 必填字段
+                      span(ng-message="maxlength") 字段不能超过 20 个字符.
             .col-sm-12(ng-if="createVM.characteristic.valueType === createVM.VALUE_TYPES.NUMBER_RANGE")
               .row
                 .col-sm-4
@@ -118,7 +123,7 @@
                       ng-messages="step.characteristicValueForm.valueFrom.$error"
                       ng-show="createForm.hasError(step.characteristicValueForm.valueFrom)"
                     )
-                      span(ng-message="required") This field is required.
+                      span(ng-message="required") 必填字段
                 .col-sm-4
                   .form-group(ng-class="{ 'has-error': createForm.hasError(step.characteristicValueForm.valueTo) }")
                     .input-group
@@ -133,7 +138,7 @@
                       ng-messages="step.characteristicValueForm.valueTo.$error"
                       ng-show="createForm.hasError(step.characteristicValueForm.valueTo)"
                     )
-                      span(ng-message="required") This field is required.
+                      span(ng-message="required") 必填字段
                 .col-sm-4
                   .form-group(ng-class="{ 'has-error': createForm.hasError(step.characteristicValueForm.unitOfMeasure) }")
                     .input-group
@@ -149,8 +154,8 @@
                       ng-messages="step.characteristicValueForm.unitOfMeasure.$error"
                       ng-show="createForm.hasError(step.characteristicValueForm.unitOfMeasure)"
                     )
-                      span(ng-message="required") This field is required.
-                      span(ng-message="maxlength") This field must not exceed 20 chars.
+                      span(ng-message="required") 必填字段
+                      span(ng-message="maxlength") 字段不能超过 20 个字符.
         .col-sm-2.text-right
           a.btn.btn-default.z-depth-1(ng-disabled="!step.characteristicValueForm.$valid", ng-click="createVM.createCharacteristicValue() && createForm.resetForm(step.characteristicValueForm)")
             span.item-icon.fa.fa-plus
@@ -159,7 +164,9 @@
     .form-group.text-left
       a.btn.btn-default.z-depth-1(ng-click="createVM.characteristicEnabled = true", ng-if="!createVM.characteristicEnabled")
         span.item-icon.fa.fa-plus
-        span.item-text New Characteristic
+        span.item-text 添加特征
+        //gqc New Characteristic
       a.btn.btn-warning.z-depth-1(ng-click="createVM.createCharacteristic() && createForm.resetForm(step.characteristicForm)", ng-disabled="!step.characteristicForm.$valid || !step.characteristicValuesForm.$valid", ng-if="createVM.characteristicEnabled")
         span.item-icon.fa.fa-save
-        span.item-text Create
+        span.item-text 创建
+        //gqc Create

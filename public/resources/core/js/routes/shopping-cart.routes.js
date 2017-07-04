@@ -36,7 +36,8 @@
             .state('shopping-cart', {
                 url: '/shopping-cart',
                 data: {
-                    title: 'My Shopping Cart',
+                    title: '我的购物车',
+                    //gqc 'My Shopping Cart',
                     loggingRequired: true
                 },
                 views: {

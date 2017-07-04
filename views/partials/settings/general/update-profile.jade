@@ -20,8 +20,8 @@
               ng-messages="updateVM.form.firstName.$error"
               ng-show="updateVM.hasFieldError(updateVM.form.firstName)"
             )
-              span(ng-message="required") This field is required.
-              span(ng-message="maxlength") This field must not exceed 30 chars.
+              span(ng-message="required") 必填字段
+              span(ng-message="maxlength") 字段不能超过 30 个字符.
         .col-sm-6
           .form-group(
             ng-class="{ 'has-error': updateVM.hasFieldError(updateVM.form.lastName) }"
@@ -38,8 +38,8 @@
               ng-messages="updateVM.form.lastName.$error"
               ng-show="updateVM.hasFieldError(updateVM.form.lastName)"
             )
-              span(ng-message="required") This field is required.
-              span(ng-message="maxlength") This field must not exceed 30 chars.
+              span(ng-message="required") 必填字段
+              span(ng-message="maxlength") 字段不能超过 30 个字符.
       .row
         .col-sm-6
           .form-group(ng-class="{ 'has-error': updateVM.hasFieldError(updateVM.form.title) }")
@@ -94,7 +94,8 @@
               ng-messages="updateVM.form.birthDate.$error"
               ng-show="updateVM.hasFieldError(updateVM.form.birthDate)"
             )
-              span(ng-message="date") This field must be a valid date.
+              span(ng-message="date") 字段必须是合法的日期
+              //This field must be a valid date.
       .row
         .col-sm-6
           .form-group(ng-class="{ 'has-error': updateVM.hasFieldError(updateVM.form.countryOfBirth) }")
@@ -118,7 +119,7 @@
               ng-messages="updateVM.form.placeOfBirth.$error"
               ng-show="updateVM.hasFieldError(updateVM.form.placeOfBirth)"
             )
-              span(ng-message="maxlength") This field must not exceed 100 chars.
+              span(ng-message="maxlength") 字段不能超过 100 个字符.
       .form-group.text-right
         a.btn.btn-success(
           ng-click="updateVM.update()"

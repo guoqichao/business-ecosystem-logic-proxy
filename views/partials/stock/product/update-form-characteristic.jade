@@ -5,7 +5,7 @@
         .h4
           strong {{ characteristic.name }}
       .panel-body
-        p.text-dark-secondary {{ characteristic.description ? characteristic.description : 'No description provided.' }}
+        p.text-dark-secondary {{ characteristic.description ? characteristic.description : '无描述' }}
         .form-group
           .item-radio.readonly(ng-repeat="characteristicValue in characteristic.productSpecCharacteristicValue")
             label.radio
@@ -14,4 +14,5 @@
                 i.fa.fa-lg
               | {{ updateVM.formatCharacteristicValue(characteristic, characteristicValue) }}
   .col-xs-12(ng-if="!updateVM.item.productSpecCharacteristic.length")
-    .alert.alert-info.text-center No characteristics included.
+    .alert.alert-info.text-center 没有产品特性
+    //No characteristics included.

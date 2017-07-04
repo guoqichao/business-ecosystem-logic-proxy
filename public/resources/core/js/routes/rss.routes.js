@@ -36,7 +36,8 @@
             .state('rss', {
                 url: '/rss',
                 data: {
-                    title: 'Revenue Sharing',
+                    title: '利润分配',
+                    //gqc 'Revenue Sharing',
                     loggingRequired: true
                 },
                 views: {

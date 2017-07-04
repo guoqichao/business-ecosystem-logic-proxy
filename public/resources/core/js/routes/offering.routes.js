@@ -20,7 +20,7 @@
 /**
  * @author Francisco de la Vega <fdelavega@conwet.com>
  *         Jaime Pajuelo <jpajuelo@conwet.com>
- *         Aitor Magán <amagan@conwet.com>
+ *         Aitor Magán <amagan@conwet.com> //gqc
  */
 (function () {
 
@@ -36,7 +36,7 @@
             .state('offering', {
                 url: '/offering?catalogueId&categoryId&type',
                 data: {
-                    title: 'Marketplace',
+                    title: '云市场',
                     loggingRequired: false,
                     filters: ['type']
                 },

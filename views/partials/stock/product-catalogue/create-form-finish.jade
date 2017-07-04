@@ -1,6 +1,7 @@
 form(name="step.form", novalidate)
   .form-group
-    label Name
+    label 名称
+    //gqc Name
     input.form-control(
       type="text"
       name="name"
@@ -9,13 +10,15 @@ form(name="step.form", novalidate)
       readonly
     )
   .form-group
-    label Status
+    label 状态
+    //gqc Status
     .status-group
       .status-item(ng-repeat="status in FILTER_STATUS", class="status-{{ status.value | lowercase }}", ng-class="{ active: createVM.data.lifecycleStatus == status.value }")
         span.item-icon
         span.item-text {{ status.value }}
   .form-group
-    label Description
+    label 描述
+    //gqc Description
     textarea.form-control(
       rows="3",
       name="description",
@@ -28,4 +31,5 @@ form(name="step.form", novalidate)
       ng-disabled="!step.form.$valid || createVM.create.status === createVM.STATUS.PENDING"
     )
       span.item-icon.fa.fa-spin.fa-spinner(ng-if="createVM.create.status === createVM.STATUS.PENDING")
-      span.item-text Create
+      span.item-text 创建
+      //gqc Create
